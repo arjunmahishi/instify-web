@@ -1,0 +1,1 @@
+web: gunicorn instify_web.wsgi --log-file -
