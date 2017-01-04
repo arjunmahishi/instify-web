@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def landing(req):
+	context = {
+		'title' : "Instify-Admin",
+	}
+
+	return render(req, "landing.html", context)
