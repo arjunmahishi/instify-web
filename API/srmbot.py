@@ -16,7 +16,6 @@ def makeData(news):
                      'snip': news[i].snip.replace("\n","").replace("\t",""),
                      'link' : news[i].link
                      })
-	print "News : " + str(news)
     return { 'newsItems' : l }
 
 def displayAllNews(news):

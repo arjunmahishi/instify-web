@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6_ccpwejw5fbf0w%b%cq&*+)#^(26!zembzd#pl!=exa)1wa^%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
 	ALLOWED_HOSTS = ["instify.herokuapp.com", "127.0.0.1"]
