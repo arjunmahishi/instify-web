@@ -4,12 +4,6 @@ URL_MAIN = "http://evarsity.srmuniv.ac.in/srmswi/usermanager/youLogin.jsp"
 URL_ATTENDANCE = "http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=7"
 URL_TIMETABLE = "http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5"
 
-## Auth details ##
-# username = raw_input("username : ")
-# password = raw_input("password : ")
-# username = "ra1511008020111"
-# password = ""
-
 def getHtml(url, username, password):
 
 	## POST payload and header ##

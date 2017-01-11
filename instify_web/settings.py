@@ -13,7 +13,10 @@ SECRET_KEY = '6_ccpwejw5fbf0w%b%cq&*+)#^(26!zembzd#pl!=exa)1wa^%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["instify.herokuapp.com"]
+if DEBUG:
+	ALLOWED_HOSTS = ["instify.herokuapp.com", "127.0.0.1"]
+else:
+	ALLOWED_HOSTS = ["instify.herokuapp.com"]
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
