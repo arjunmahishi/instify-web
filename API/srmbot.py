@@ -16,6 +16,7 @@ def makeData(news):
                      'snip': news[i].snip.replace("\n","").replace("\t",""),
                      'link' : news[i].link
                      })
+	print news
     return { 'newsItems' : l }
 
 def displayAllNews(news):
@@ -44,7 +45,7 @@ def getNews():
 		    snip = tag.find_all('p')[0].text.replace('... More','...')
 		    news.append(newsItem(title,link,snip))
 
-    except urllib2.URLError:
+    except :
         return "fail"
 
     return news
