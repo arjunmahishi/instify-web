@@ -16,7 +16,21 @@ def univNews(req):
 	return JsonResponse(data)
 
 def attendance(req):
-	return JsonResponse(getAttendance("ra1511008020111", ""))
+	get = req.GET or None
+
+	if get and "regno" in get.keys() and "password" in get.keys():
+		regno = get["regno"]
+		password = get["password"]
+		return JsonResponse(getAttendance(regno, password))
+
+	return JsonResponse(ERROR_MSG)
 
 def timeTable(req):
-	return JsonResponse(getTimeTable("ra1511008020111", ""))
+	get = req.GET or None
+
+	if get and "regno" in get.keys() and "password" in get.keys():
+		regno = get["regno"]
+		password = get["password"]
+		return JsonResponse(getTimeTable(regno, password))
+
+	return JsonResponse(ERROR_MSG) 
