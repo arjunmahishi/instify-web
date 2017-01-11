@@ -1,6 +1,5 @@
 import requests
-from parsley import getAttendance, getTimeTable
-
+import parsley
 URL_MAIN = "http://evarsity.srmuniv.ac.in/srmswi/usermanager/youLogin.jsp"
 URL_ATTENDANCE = "http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=7"
 URL_TIMETABLE = "http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5"
@@ -20,9 +19,15 @@ def getHtml(url, username, password):
 	session = requests.session()  # To maintain auth cookies
 
 	session.post(URL_MAIN, data=string, headers=header)  # Login first
-	req = session.post(url)  # get attendance 
+	req = session.post(url)  # get attendance
 
 	return req.text
+
+def getTimeTable(username, password):
+	return parsley.getTimeTableData(getHtml(URL_TIMETABLE, username, password))
+
+def getAttendance(username, password):
+	return parsley.getAttendanceData(getHtml(URL_ATTENDANCE, username, password))
 
 if __name__ == "__main__":
 	import sys
@@ -38,6 +43,4 @@ if __name__ == "__main__":
 		print timeTable
 
 		print "Attendance : \n"
-		print attendance 
-
-		
+		print attendance

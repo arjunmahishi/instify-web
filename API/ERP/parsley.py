@@ -1,8 +1,8 @@
-from bs4 import BeautifulSoup as bs 
+from bs4 import BeautifulSoup as bs
 
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-def getTimeTable(htmlData):
+def getTimeTableData(htmlData):
 
 	timeTableData = {}
 	day_no = 0
@@ -23,7 +23,7 @@ def getTimeTable(htmlData):
 
 	return timeTableData
 
-def getAttendance(htmlData):
+def getAttendanceData(htmlData):
 
 	subjectWiseData = {}
 
