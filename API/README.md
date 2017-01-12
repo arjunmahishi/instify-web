@@ -4,8 +4,8 @@ Base URL : http://instify.herokuapp.com/api/
 
 # End points
 
-* Getting attendance : /attendance/?regno=<REGNO>&password=<PASSWORD>
-* Getting Time-table : /time-table/?regno=<REGNO>&password=<PASSWORD>
+* Getting attendance : /attendance/?regno=REGNO&password=PASSWORD
+* Getting Time-table : /time-table/?regno=REGNO&password=PASSWORD
 
 ### Note
 
