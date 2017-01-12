@@ -7,6 +7,16 @@ ERROR_MSG = {
 	"ERROR" : "Something is wrong with the way you are accessing the API."
 }
 
+
+def base(req):
+	return JsonResponse({
+		"API_STATUS" : "Working",
+		"End-points" : [
+			"/attendance/?regno=&password=",
+			"/time-table/?regno=&password="
+		]
+	})
+
 def univNews(req):
 	try:
 		news = srmbot.getNews()
@@ -33,4 +43,4 @@ def timeTable(req):
 		password = get["password"]
 		return JsonResponse(getTimeTable(regno, password))
 
-	return JsonResponse(ERROR_MSG) 
+	return JsonResponse(ERROR_MSG)
