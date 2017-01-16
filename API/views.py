@@ -18,8 +18,9 @@ def base(req):
 	return JsonResponse({
 		"API_STATUS" : "Working",
 		"End-points" : [
+			"/university-news/",
 			"/attendance/?regno=&password=",
-			"/time-table/?regno=&password="
+			"/time-table/?regno=&password=",
 		]
 	})
 
