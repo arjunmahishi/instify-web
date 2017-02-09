@@ -30,11 +30,11 @@ if __name__ == "__main__":
 		username = sys.argv[1]
 		password = sys.argv[2]
 
-		timeTable = getTimeTable(getHtml(URL_TIMETABLE, username, password))
-		attendance = getAttendance(getHtml(URL_ATTENDANCE, username, password))
+		timeTable = getTimeTable(username, password)
+		# attendance = getAttendance(getHtml(URL_ATTENDANCE, username, password))
 
-		print "Time Table : \n"
-		print timeTable
+		# print "Time Table : \n"
+		# print timeTable
 
-		print "Attendance : \n"
-		print attendance
+		# print "Attendance : \n"
+		# print attendance

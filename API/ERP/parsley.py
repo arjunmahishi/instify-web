@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup as bs
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 def getTimeTableData(htmlData):
+	"Takes in html data and returns a dictionary"
 
 	timeTableData = {}
 	day_no = 0
 
 	soup = bs(htmlData, 'html.parser')
 	table = soup.find("table").find_all("tr")
+
+	subjectNames = getSubjectNameDict(soup)
 
 	for row in table[3:]:
 		subjectList = []
@@ -24,6 +27,7 @@ def getTimeTableData(htmlData):
 	return timeTableData
 
 def getAttendanceData(htmlData):
+	"Takes in html data and returns a dictionary"
 
 	subjectWiseData = {}
 
@@ -51,3 +55,19 @@ def getsubjectString(subjectList):
 		subjectString += subject + "/"
 
 	return subjectString.strip('/')
+
+def getSubjectNameDict(soup):
+	"Takes a soup object and returns a dictionary"
+
+	subjectNames = {}
+
+	table = soup.find_all("table")[1].find_all("tr")
+	for row in table[2:]:
+		columns = row.find_all("td")
+
+		subjectCode = columns[0].text.strip()
+		subjectName = columns[1].text.strip()
+
+		subjectNames[subjectCode] = subjectName
+
+	return subjectNames
