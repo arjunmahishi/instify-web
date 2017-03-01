@@ -23,7 +23,7 @@ def getTimeTableData(htmlData):
 			## Preparing a list of subjects for the day ##
 			subjectList.append(getsubjectString(hour.text.strip().split(','), subjectDict))
 
-		timeTableData[day_name] = subjectList
+		timeTableData[day_name] = subjectList[:-1]
 
 	return {getCurrentDay() : timeTableData[getCurrentDay()]}
 
