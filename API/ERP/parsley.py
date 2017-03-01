@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup as bs
+import datetime
 
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -24,7 +25,7 @@ def getTimeTableData(htmlData):
 
 		timeTableData[day_name] = subjectList
 
-	return timeTableData
+	return {getCurrentDay() : timeTableData[getCurrentDay()]}
 
 def getAttendanceData(htmlData):
 	"Takes in html data and returns a dictionary"
@@ -74,3 +75,6 @@ def getSubjectNameDict(soup):
 		subjectNames[subjectCode] = subjectName
 
 	return subjectNames
+
+def getCurrentDay():
+	return datetime.datetime.now().strftime("%A")
