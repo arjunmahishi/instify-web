@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Layout, Header, Card, CardText} from 'react-mdl';
+import {Layout, Header, Card, CardText, Icon } from 'react-mdl';
 
 import "./about.css";
 
@@ -8,7 +8,10 @@ class About extends Component{
 		return(
 			<div>
 				<Layout fixedHeader>
-			        <Header className="header login-header" title={"Instify - About"}></Header>
+			        <Header className="header login-header" >
+			        	<a href="/"><Icon name="arrow_back" style={{color: "#fff"}}/></a> 
+			        	<div className="header-title">Instify - About</div>
+			        </Header>
 			        <div className="activity">
 			        	<Card shadow={3} className="card-about">
 						    <CardText className="card-contents">

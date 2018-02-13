@@ -5,3 +5,10 @@
     text-align: center;
     min-height: 0px;
 }
+
+.header-title{
+	font-size: 20px;
+	font-weight: 400;
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
