@@ -1,0 +1,35 @@
+{
+  "short_name": "Instify",
+  "name": "Instify",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src":"img/logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

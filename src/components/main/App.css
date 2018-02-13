@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.header{
+  background-color: #0089f6;
+}
+
+.tabs{
+  background-color: #0089f6;
+}
+
+.card{
+  min-height: 0;
+  width: 100%;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.card-title{
+  color: #0089f6;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 23px;
+}
+
+.card-body{
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
+.activity{
+  padding: 9px;
+}
+
+.arrow{
+  float: right;
+}
+
+.card-contents{
+  float: left;
+}
+
+.news-title > a{
+  color: #0089f6;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 23px;
+  text-decoration: none;
+}
+
+.news-body{
+  padding: 3px;
+}
+
+.logout-icon{
+  font-size: 21px;
+}

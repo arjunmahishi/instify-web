@@ -1,0 +1,8 @@
+.login-header > .mdl-layout__header-row{
+  padding: 0 16px 0 15px;
+}
+
+.login{
+  text-align: center;
+  margin-top: 6rem;
+}
