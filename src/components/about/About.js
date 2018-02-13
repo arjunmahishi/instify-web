@@ -14,8 +14,8 @@ class About extends Component{
 						    <CardText className="card-contents">
 						        <p>Developer: <a href="https://arjunmahishi.github.io/">Arjun Mahishi</a></p>
 					        	<p>
-						        	Instify is an application that lets students keep track of their attendance, 
-						        	timetable, marks and much more.
+						        	Instify is an application that lets students keep track 
+						        	of their attendance, timetable, marks and much more.
 					        	</p>
 					        	<p>
 					        		If you are interested in contributing to this project, write me an email 

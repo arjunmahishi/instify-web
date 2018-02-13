@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SwipeReact from 'swipe-react';
 import './App.css';
 
 import { Layout, Header, HeaderRow, HeaderTabs, Tab, Drawer, Content, Icon, Navigation } from 'react-mdl';
@@ -94,8 +95,16 @@ class App extends Component {
               </HeaderTabs>
           </Header>
           <Drawer title="Instify">
-            <Navigation>
-              <a href="/about"><Icon name="info" />About</a>
+            <Navigation className="drawer">
+              <a href="/about">
+                <Icon className="drawer-icon" name="info" />
+                <div className="drawer-item">About</div>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.instify.android&hl=en">
+                <Icon className="drawer-icon" name="android" />
+                <div className="drawer-item">Get the android app</div>
+              </a>
+              <p style={{position: "absolute", bottom: 0}}>Other features coming soon</p>
             </Navigation>
           </Drawer>
           <Content>

@@ -81,3 +81,15 @@
 .logout-icon{
   font-size: 21px;
 }
+
+.drawer{
+  text-align: left;
+}
+
+.drawer-icon{
+  float: left;
+}
+
+.drawer-item{
+  text-align: center;
+}

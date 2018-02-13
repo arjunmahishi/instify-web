@@ -8,7 +8,8 @@
     "react-dom": "^16.2.0",
     "react-mdl": "^1.11.0",
     "react-router": "^3.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "swipe-react": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
