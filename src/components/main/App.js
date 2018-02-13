@@ -22,6 +22,23 @@ class App extends Component {
       timetableData: null
     };
 
+    SwipeReact.config({
+      left: () => {
+        let newTab = this.whichComponent("right");
+        this.setState({
+          activeTab: newTab
+        });
+        this.handleTabChange(newTab);
+      },
+      right: () => {
+        let newTab = this.whichComponent("left");
+        this.setState({
+          activeTab: newTab
+        });
+        this.handleTabChange(newTab);
+      } 
+    });
+
   }
 
   componentWillMount(){
@@ -59,6 +76,17 @@ class App extends Component {
 
   }
 
+  whichComponent = (side) => {
+    let tab = this.state.activeTab;
+    if(side === 'left'){
+      if(tab > 0) return --tab; 
+      return tab=0;
+    }else{
+      if(tab < 2) return ++tab;
+      return tab=2;
+    }
+  }
+
   handleTabChange = (tabId) => {
     let activeComponent = "", activeData = "";
     switch(tabId){
@@ -71,7 +99,7 @@ class App extends Component {
     this.setState({ActiveComponent: activeComponent, activeData: activeData});
   }
 
-  handleLogout(){
+  handleLogout = () => {
     delete localStorage.user;
     delete localStorage.pass;
     window.location = "/login";
@@ -107,7 +135,7 @@ class App extends Component {
               <p style={{position: "absolute", bottom: 0}}>Other features coming soon</p>
             </Navigation>
           </Drawer>
-          <Content>
+          <Content {...SwipeReact.events}>
               <this.state.ActiveComponent data={this.state.activeData}/>
           </Content>
         </Layout>
