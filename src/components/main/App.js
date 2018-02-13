@@ -93,7 +93,11 @@ class App extends Component {
                   <Tab><Icon name="account_balance" /></Tab>
               </HeaderTabs>
           </Header>
-          <Drawer title="Instify" />
+          <Drawer title="Instify">
+            <Navigation>
+              <a href="/about"><Icon name="info" />About</a>
+            </Navigation>
+          </Drawer>
           <Content>
               <this.state.ActiveComponent data={this.state.activeData}/>
           </Content>
