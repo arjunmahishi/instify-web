@@ -47,13 +47,16 @@ class App extends Component {
 
     if("user" in localStorage){
 
-      // Cache first
-      this.setState({
-        attendanceData: this.getCachedData("attendance"), 
-        activeData: this.getCachedData("attendance")
-      });
-      this.setState({timetableData: this.getCachedData("timetable")});
-      this.setState({timetableData: this.getCachedData("univ")});
+      // Cache first //
+      if("univ" in localStorage){
+        this.setState({
+          attendanceData: this.getCachedData("attendance"), 
+          activeData: this.getCachedData("attendance")
+        });
+        this.setState({timetableData: this.getCachedData("timetable")});
+        this.setState({timetableData: this.getCachedData("univ")});
+      }
+      ///////////////////
 
       axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get-attd.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
         .then(function (response) {
