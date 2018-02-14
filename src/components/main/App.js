@@ -54,7 +54,7 @@ class App extends Component {
           activeData: this.getCachedData("attendance")
         });
         this.setState({timetableData: this.getCachedData("timetable")});
-        this.setState({timetableData: this.getCachedData("univ")});
+        this.setState({univData: this.getCachedData("univ")});
       }
       ///////////////////
 
@@ -84,6 +84,7 @@ class App extends Component {
           .catch(function (error) {
             console.log(error);
           });
+          
     }else{
       window.location = "/login";
     }
@@ -110,7 +111,11 @@ class App extends Component {
       default: activeComponent = Attendance; activeData = this.state.attendanceData; break;
     }
 
-    this.setState({ActiveComponent: activeComponent, activeData: activeData});
+    this.setState({
+      ActiveComponent: activeComponent, 
+      activeData: activeData,
+      activeTab: tabId
+    });
   }
 
   handleLogout = () => {
@@ -156,7 +161,7 @@ class App extends Component {
             </Navigation>
           </Drawer>
           <Content {...SwipeReact.events}>
-              <this.state.ActiveComponent data={this.state.activeData}/>
+              <this.state.ActiveComponent data={{payload: this.state.activeData, type: this.state.activeTab}}/>
           </Content>
         </Layout>
       </div>

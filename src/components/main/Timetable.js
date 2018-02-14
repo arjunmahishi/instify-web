@@ -12,10 +12,10 @@ class Timestable extends Component{
 		return days[4];
 	}
 
-	getCurrentTimetable = () => this.props.data[this.getCurrentDay()];
+	getCurrentTimetable = () => this.props.data.payload[this.getCurrentDay()];
 
 	TimetableData = () => {
-		if(this.props.data !== null){
+		if(this.props.data !== null && this.props.data.type === 1){
 			let data = this.getCurrentTimetable();
 			return (
 				data.map((item, i) => {

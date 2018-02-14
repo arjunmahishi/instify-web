@@ -17,15 +17,17 @@ class Attendance extends Component{
 	}
 
 	AttendanceData = () => {
-		if(this.props.data !== null){
+		if(this.props.data !== null && this.props.data.type === 0){
 			return (
-				this.props.data.subjects.map((sub, i) => {
+				this.props.data.payload.subjects.map((sub, i) => {
 					return (
 						<Card shadow={0} className="card" key={i}>
 						    <CardText className="card-contents">
-						        <div className="card-title">{this.props.data[sub]["sub-desc"]}</div>
-						        <div className="card-body" style={{color: this.getColor(this.props.data[sub]["avg-attd"])}}>
-							        {this.props.data[sub]["avg-attd"] + "%"}
+						        <div className="card-title">{this.props.data.payload[sub]["sub-desc"]}</div>
+						        <div className="card-body" style={{
+						        	color: this.getColor(this.props.data.payload[sub]["avg-attd"])
+						        }}>
+							        {this.props.data.payload[sub]["avg-attd"] + "%"}
 						        </div>
 						    </CardText>
 						</Card>

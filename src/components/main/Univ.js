@@ -4,9 +4,9 @@ import { Card, CardText, Spinner } from 'react-mdl';
 class Univ extends Component{
 
 	UnivData = () => {
-		if(this.props.data !== null){
+		if(this.props.data !== null && this.props.data.type === 2){
 			return (
-				this.props.data.newsItems.map((item, i) => {
+				this.props.data.payload.newsItems.map((item, i) => {
 					return (
 						<Card shadow={0} className="card" key={i}>
 						    <CardText className="card-contents">
