@@ -4,7 +4,8 @@ import { Card, CardText, Spinner } from 'react-mdl';
 class Univ extends Component{
 
 	UnivData = () => {
-		if(this.props.data !== null && this.props.data.type === 2){
+		console.log("univ", this.props.data);
+		if(this.validateData()){
 			return (
 				this.props.data.payload.newsItems.map((item, i) => {
 					return (
@@ -19,6 +20,14 @@ class Univ extends Component{
 			)
 		}
 		return <Spinner />;
+	}
+
+	validateData = () => {
+		return (
+			this.props.data.payload !== null 
+			&& this.props.data.type === 2
+			&& "newsItems" in this.props.data.payload
+		);
 	}
 
 	render(){

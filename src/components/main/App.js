@@ -41,7 +41,7 @@ class App extends Component {
 
   }
 
-  componentWillMount(){
+  componentDidMount(){
 
     const thisObj = this;
 
@@ -84,7 +84,7 @@ class App extends Component {
           .catch(function (error) {
             console.log(error);
           });
-          
+
     }else{
       window.location = "/login";
     }

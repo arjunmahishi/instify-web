@@ -14,8 +14,17 @@ class Timestable extends Component{
 
 	getCurrentTimetable = () => this.props.data.payload[this.getCurrentDay()];
 
+	validateData = () => {
+		return (
+			this.props.data.payload !== null 
+			&& this.props.data.type === 1
+			&& "friday" in this.props.data.payload
+		);
+	}
+
 	TimetableData = () => {
-		if(this.props.data !== null && this.props.data.type === 1){
+		console.log("time", this.props.data);
+		if(this.validateData()){
 			let data = this.getCurrentTimetable();
 			return (
 				data.map((item, i) => {

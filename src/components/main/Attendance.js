@@ -17,7 +17,8 @@ class Attendance extends Component{
 	}
 
 	AttendanceData = () => {
-		if(this.props.data !== null && this.props.data.type === 0){
+		console.log("attd", this.props.data);
+		if(this.props.data.payload !== null && this.props.data.type === 0){
 			return (
 				this.props.data.payload.subjects.map((sub, i) => {
 					return (
