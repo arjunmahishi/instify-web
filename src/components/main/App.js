@@ -47,9 +47,18 @@ class App extends Component {
 
     if("user" in localStorage){
 
+      // Cache first
+      this.setState({
+        attendanceData: this.getCachedData("attendance"), 
+        activeData: this.getCachedData("attendance")
+      });
+      this.setState({timetableData: this.getCachedData("timetable")});
+      this.setState({timetableData: this.getCachedData("univ")});
+
       axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get-attd.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
         .then(function (response) {
           thisObj.setState({attendanceData: response.data, activeData: response.data});
+          thisObj.cacheData("attendance", response.data);
         })
         .catch(function (error) {
           console.log(error);
@@ -58,6 +67,7 @@ class App extends Component {
       axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get-ptt.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
           .then(function (response) {
             thisObj.setState({timetableData: response.data});
+            thisObj.cacheData("timetable", response.data);
           })
           .catch(function (error) {
             console.log(error);
@@ -66,6 +76,7 @@ class App extends Component {
       axios.get('https://hashbird.com/gogrit.in/workspace/srm-api/univ-news.php')
           .then(function (response) {
             thisObj.setState({univData: response.data});
+            thisObj.cacheData("univ", response.data);
           })
           .catch(function (error) {
             console.log(error);
@@ -104,6 +115,12 @@ class App extends Component {
     delete localStorage.pass;
     window.location = "/login";
   }
+
+  cacheData = (type, data) => {
+    localStorage[type] = JSON.stringify(data);
+  }
+
+  getCachedData = (type) => JSON.parse(localStorage[type]);
 
   render() {
     return (
