@@ -62,15 +62,11 @@ class Attendance extends Component{
 	}
 
 	extraInfoHandler = (i) => {
-		if(this.state.openCard !== i){
-			if(this.state.openCard !== null){
-				document.querySelector(`#card-extra-${this.state.openCard}`).style.display = 'none';
-			}
-			document.querySelector(`#card-extra-${i}`).style.display = 'block';
-			this.setState({openCard: i});
+		let cardExtra = document.querySelector(`#card-extra-${i}`);
+		if(cardExtra.style.display === "none" || cardExtra.style.display === ""){
+			cardExtra.style.display = "block";
 		}else{
-			document.querySelector(`#card-extra-${i}`).style.display = 'none';
-			this.setState({openCard: null});
+			cardExtra.style.display = "none";
 		}
 	}
 
