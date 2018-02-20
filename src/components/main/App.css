@@ -93,3 +93,12 @@
 .drawer-item{
   text-align: center;
 }
+
+
+.mdl-list__item{
+  padding: 3px;
+}
+
+.card-extra{
+  display: none;
+}
