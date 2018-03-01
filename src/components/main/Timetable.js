@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import {Card, CardText, Spinner, Icon} from 'react-mdl';
+import {Card, CardText, Spinner, Icon, Grid, Cell} from 'react-mdl';
 
 class Timestable extends Component{
 
-	getCurrentDay = () => {
-		let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-		let n = new Date().getDay();
-		if(n > 0 && n < 6){
-			return days[n-1];
+	constructor(props){
+		super(props);
+		this.state = {
+			day: this.getCurrentDay()
 		}
-		return days[4];
 	}
 
-	getCurrentTimetable = () => this.props.data.payload[this.getCurrentDay()];
+	days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+
+	getCurrentDay = () => {
+		let n = new Date().getDay();
+		if(n > 0 && n < 6){
+			return this.days[n-1];
+		}
+		return this.days[4];
+	}
+
+	scrollDays = (direction) => {
+		let i = this.days.indexOf(this.state.day);
+		if(direction === "right"){
+			if(i+1 < 5) this.setState({day: this.days[i+1]})
+			else this.setState({day: this.days[0]})
+		}else{
+			if(i-1 > -1) this.setState({day: this.days[i-1]})
+			else this.setState({day: this.days[4]})
+		}
+	}
+
+	getCurrentTimetable = () => this.props.data.payload[this.state.day];
 
 	validateData = () => {
 		return (
@@ -23,7 +42,7 @@ class Timestable extends Component{
 	}
 
 	TimetableData = () => {
-		console.log("time", this.props.data);
+		// console.log("time", this.props.data);
 		if(this.validateData()){
 			let data = this.getCurrentTimetable();
 			return (
@@ -45,12 +64,20 @@ class Timestable extends Component{
 	render(){
 		return(
 			<div className="activity">
-				<div>
-					<Icon className="week-nav" name="keyboard_arrow_left" />
-					<span className="week">{this.getCurrentDay()}</span>
-					<Icon className="week-nav" name="keyboard_arrow_right" />
+				<Grid>
+					<Cell col={1}>
+						<Icon onClick={() => this.scrollDays("left")} 
+						className="week-nav week-nav-left" name="keyboard_arrow_left" />
+					</Cell>
+					<Cell col={2} className="week">{this.state.day}</Cell>
+					<Cell col={1}>
+						<Icon onClick={() => this.scrollDays("right")} 
+						className="week-nav week-nav-right" name="keyboard_arrow_right" />
+					</Cell>
+				</Grid>
+				<div className="timetable-list">
+					<this.TimetableData />
 				</div>
-				<this.TimetableData />
 			</div>
 		)
 	}

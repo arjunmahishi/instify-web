@@ -104,9 +104,16 @@
 }
 
 .week-nav{
-  margin: 10px;
+	color: #fe4081;
+	font-size: xx-large;
 }
 
 .week{
+	font-size: x-large;
+	color: #818181;
+	text-transform: capitalize;
+}
 
+.timetabel-list{
+	margin-top: -25px;
 }

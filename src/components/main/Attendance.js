@@ -79,7 +79,7 @@ class Attendance extends Component{
 	}
 
 	AttendanceData = () => {
-		console.log("attd", this.props.data);
+		// console.log("attd", this.props.data);
 		if(this.validateData()){
 			return (
 				this.props.data.payload.subjects.map((sub, i) => {
