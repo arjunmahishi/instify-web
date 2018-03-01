@@ -43,4 +43,10 @@
     -->
   </body>
 
+  <script>
+    // HTTPS REDIRECT //
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost') 
+        location.replace('https://' + location.href.split('//')[1]);
+  </script>
+
 </html>
