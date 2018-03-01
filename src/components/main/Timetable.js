@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardText, Spinner} from 'react-mdl';
+import {Card, CardText, Spinner, Icon} from 'react-mdl';
 
 class Timestable extends Component{
 
@@ -45,6 +45,11 @@ class Timestable extends Component{
 	render(){
 		return(
 			<div className="activity">
+				<div>
+					<Icon className="week-nav" name="keyboard_arrow_left" />
+					<span className="week">{this.getCurrentDay()}</span>
+					<Icon className="week-nav" name="keyboard_arrow_right" />
+				</div>
 				<this.TimetableData />
 			</div>
 		)
