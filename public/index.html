@@ -52,6 +52,20 @@
     -->
   </body>
 
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCR-bp7LI8JCPKYUjom5XP-8jTZZoR4N9g",
+      authDomain: "instify-62dda.firebaseapp.com",
+      databaseURL: "https://instify-62dda.firebaseio.com",
+      projectId: "instify-62dda",
+      storageBucket: "instify-62dda.appspot.com",
+      messagingSenderId: "299280645644"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <script>
     // HTTPS REDIRECT //
     if (location.protocol !== 'https:' && location.hostname !== 'localhost') 
