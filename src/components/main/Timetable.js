@@ -11,6 +11,8 @@ class Timestable extends Component{
 	}
 
 	days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+	timings = ["8:00 - 8:45", "8:50 - 9:40", "9:50 - 10:40", "10:40 - 11:30", 
+		"12:20 - 1:10", "1:10 - 2:00", "2:00 - 2:50", "2:50 - 3:40"];
 
 	getCurrentDay = () => {
 		let n = new Date().getDay();
@@ -50,8 +52,15 @@ class Timestable extends Component{
 					return (
 						<Card shadow={0} className="card" key={i}>
 						    <CardText className="card-contents">
+								<div className="news-body">
+									<div style={{float: "left"}}>
+										{"Hour: " + (i+1)}
+									</div>
+									<div style={{float: "right"}}>
+										{"Timings: " + this.timings[i]}
+									</div><br /><br />
+								</div>
 						        <div className="card-title">{item}</div>
-						        <div className="news-body">{"Hour: " + (i+1)}</div>
 						    </CardText>
 						</Card>
 					)
