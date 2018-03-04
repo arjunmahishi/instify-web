@@ -18,8 +18,6 @@ class TestPerformance extends Component{
 
         const thisObj = this;
 
-        console.log("Mounted")
-
         axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get_marks.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
         .then(function (response) {
           thisObj.setState({testData: response.data, dataFetched: true});
@@ -41,7 +39,9 @@ class TestPerformance extends Component{
 
             if(this.state.testData.subjects.length === 0){
                 return(
-                    <div>Looks like your marks haven't been uploaded</div>
+                    <div style={{margin: "auto", width: "50%"}}>
+                        Looks like your marks haven't been uploaded
+                    </div>
                 )
             }else{
                 return (
@@ -49,8 +49,8 @@ class TestPerformance extends Component{
                         return (
                             <Card shadow={0} className="card" key={i}>
                                 <CardText className="card-contents">
-                                    <div className="news-title"><a href={item.link}>{item.title}</a></div>
-                                    <div className="news-body">{item.snip}</div>
+                                    <div className="news-title"></div>
+                                    <div className="news-body"></div>
                                 </CardText>
                             </Card>
                         )
@@ -70,7 +70,8 @@ class TestPerformance extends Component{
 			        	<div className="header-title">Instify - Test Performance</div>
 			        </Header>
 			        <div className="activity">
-                        <this.TestData />
+                        {/*<this.TestData />*/}
+                        <div style={{margin: "auto", width: "50%"}}>Under Construction</div>
 			        </div>
 			    </Layout>
 			</div>
