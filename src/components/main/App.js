@@ -149,6 +149,10 @@ class App extends Component {
           </Header>
           <Drawer title="Instify">
             <Navigation className="drawer">
+              <a href="/test">
+                <Icon className="drawer-icon" name="poll" />
+                <div className="drawer-item">Test performance</div>
+              </a>
               <a href="/about">
                 <Icon className="drawer-icon" name="info" />
                 <div className="drawer-item">About</div>
