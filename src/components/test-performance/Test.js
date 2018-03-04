@@ -29,12 +29,9 @@ class TestPerformance extends Component{
         });
     }
 
-    cacheData = (type, data) => {
-        localStorage[type] = JSON.stringify(data);
-    }
+    cacheData = (type, data) => localStorage[type] = JSON.stringify(data);
 
     TestData = () => {
-		// console.log("univ", this.props.data);
 		if(this.state.dataFetched === true){
 
             if(this.state.testData.subjects.length === 0){
