@@ -135,7 +135,7 @@ class App extends Component {
       <div className="App">
         <Layout fixedHeader fixedTabs>
           <Header className="header">
-              <HeaderRow title="Instify(beta)">
+              <HeaderRow title="Instify">
                  <Navigation>
                     <Icon className="logout-icon" onClick={() => this.handleLogout()} name="exit_to_app" />
                 </Navigation>
@@ -156,6 +156,10 @@ class App extends Component {
               <a href="/about">
                 <Icon className="drawer-icon" name="info" />
                 <div className="drawer-item">About</div>
+              </a>
+              <a href="#" onClick={() => this.handleLogout()}>
+                <Icon className="drawer-icon" name="exit_to_app" />
+                <div className="drawer-item">Logout</div>
               </a>
               <a href="https://play.google.com/store/apps/details?id=com.instify.android&hl=en">
                 <Icon className="drawer-icon" name="android" />
