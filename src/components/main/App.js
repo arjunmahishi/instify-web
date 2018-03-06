@@ -157,7 +157,7 @@ class App extends Component {
                 <Icon className="drawer-icon" name="info" />
                 <div className="drawer-item">About</div>
               </a>
-              <a href="#" onClick={() => this.handleLogout()}>
+              <a onClick={() => this.handleLogout()}>
                 <Icon className="drawer-icon" name="exit_to_app" />
                 <div className="drawer-item">Logout</div>
               </a>
