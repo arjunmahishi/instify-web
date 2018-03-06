@@ -9,6 +9,7 @@ import './index.css';
 import App from './components/main/App';
 import Login from './components/login/Login';
 import TestPerformance from './components/test-performance/Test';
+import Account from './components/account/Account';
 import About from './components/about/About';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
 	        <Route path='/' component={App} />
 	        <Route path='/login' component={Login} />
 	        <Route path='/test' component={TestPerformance} />
+	        <Route path='/account' component={Account} />
 	        <Route path='/about' component={About} />
 		</Router>
 	, document.getElementById('root'));
