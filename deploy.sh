@@ -1,3 +1,4 @@
+yarn build
 cd build/
 echo "Renaming index file"
 mv index.html 200.html
