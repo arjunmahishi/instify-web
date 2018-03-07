@@ -31,7 +31,9 @@ class Popup extends Component {
             <this.props.body />
           </DialogContent>
           <DialogActions>
-            <Button type='button'>{this.props.actionName}</Button>
+            <Button type='button' onClick={() => this.props.action.perform()}>
+              {this.props.action.name}
+            </Button>
             <Button id="popup-close" type='button' onClick={this.handleCloseDialog}>Close</Button>
           </DialogActions>
         </Dialog>

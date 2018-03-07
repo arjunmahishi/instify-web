@@ -153,6 +153,10 @@ class App extends Component {
                 <Icon className="drawer-icon" name="poll" />
                 <div className="drawer-item">Test performance</div>
               </a>
+              <a href="/account">
+                <Icon className="drawer-icon" name="face" />
+                <div className="drawer-item">Switch user</div>
+              </a>
               <a href="/about">
                 <Icon className="drawer-icon" name="info" />
                 <div className="drawer-item">About</div>
