@@ -28,7 +28,7 @@ class Login extends Component{
 				'https://hashbird.com/gogrit.in/workspace/srm-api/get-info.php?' 
 				+ 'regno=' + regno +'&pass=' + pass)
 		        .then(function (response) {
-					if(!response.data.error){
+					if(!response.data.error && !(typeof response.data === "string")){
 						localStorage['user'] = regno;
 						localStorage['pass'] = pass;
 						window.location = "/";
