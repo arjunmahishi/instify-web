@@ -11,6 +11,7 @@ class Login extends Component{
 		this.handleShowSnackbar = this.handleShowSnackbar.bind(this);
 		this.handleTimeoutSnackbar = this.handleTimeoutSnackbar.bind(this);
 		this.state = { isSnackbarActive: false };
+		this.HOST_NAME = "https://fnplus.xyz/srm-api";
 	}
 
 	componentWillMount(){
@@ -24,9 +25,7 @@ class Login extends Component{
 		let pass = document.querySelector("#pass").value;
 		let thisObj = this;
 		if(regno !== "" && pass !== ""){
-			axios.get(
-				'https://hashbird.com/gogrit.in/workspace/srm-api/get-info.php?' 
-				+ 'regno=' + regno +'&pass=' + pass)
+			axios.get(`${this.HOST_NAME}/get-info.php?regno=${regno}&pass=${pass}`)
 		        .then(function (response) {
 					if(!response.data.error && !(typeof response.data === "string")){
 						localStorage['user'] = regno;

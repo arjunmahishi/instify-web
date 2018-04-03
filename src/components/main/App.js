@@ -22,6 +22,8 @@ class App extends Component {
       timetableData: null
     };
 
+    this.HOST_NAME = "https://fnplus.xyz/srm-api";
+
     SwipeReact.config({
       left: () => {
         let newTab = this.whichComponent("right");
@@ -58,7 +60,7 @@ class App extends Component {
       }
       ///////////////////
 
-      axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get-attd.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
+      axios.get(`${this.HOST_NAME}/get-attd.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
         .then(function (response) {
           thisObj.setState({attendanceData: response.data, activeData: response.data});
           thisObj.cacheData("attendance", response.data);
@@ -67,7 +69,7 @@ class App extends Component {
           console.log(error);
         });
 
-      axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get-ptt.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
+      axios.get(`${this.HOST_NAME}/get-ptt.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
           .then(function (response) {
             thisObj.setState({timetableData: response.data});
             thisObj.cacheData("timetable", response.data);
@@ -76,7 +78,7 @@ class App extends Component {
             console.log(error);
           });
 
-      axios.get('https://hashbird.com/gogrit.in/workspace/srm-api/univ-news.php')
+      axios.get(`${this.HOST_NAME}/univ-news.php`)
           .then(function (response) {
             thisObj.setState({univData: response.data});
             thisObj.cacheData("univ", response.data);

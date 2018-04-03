@@ -12,13 +12,14 @@ class TestPerformance extends Component{
             testData: [],
             dataFetched: false
         }
+        this.HOST_NAME = "https://fnplus.xyz/srm-api";
     }
 
     componentDidMount(){
 
         const thisObj = this;
 
-        axios.get(`https://hashbird.com/gogrit.in/workspace/srm-api/get_marks.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
+        axios.get(`${this.HOST_NAME}/get_marks.php?regno=${localStorage["user"]}&pass=${localStorage["pass"]}`)
         .then(function (response) {
           thisObj.setState({testData: response.data, dataFetched: true});
           thisObj.cacheData("test-performance", response.data);
