@@ -74,7 +74,7 @@ class Timestable extends Component{
 		return(
 			<div className="activity">
 				<Grid>
-					<Cell col={1}>
+					<Cell col={1} offsetDesktop={4} offsetTablet={2}>
 						<Icon onClick={() => this.scrollDays("left")} 
 						className="week-nav week-nav-left" name="keyboard_arrow_left" />
 					</Cell>

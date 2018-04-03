@@ -104,8 +104,9 @@
 }
 
 .week-nav{
-	color: #fe4081;
+	color: #828282;
 	font-size: xx-large;
+  margin-bottom: 22px;
 }
 
 .week{
